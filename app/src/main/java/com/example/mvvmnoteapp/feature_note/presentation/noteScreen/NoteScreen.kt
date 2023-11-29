@@ -124,7 +124,7 @@ fun NoteScreen(
                 OrderSection(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(8.dp),
+                        .padding(4.dp),
                     noteOrder = state.noteOrder,
                     onOrderChange = {
                         viewModel.onEvent(NoteEvent.OrderNote(it))
@@ -145,8 +145,7 @@ fun NoteScreen(
                             .clickable {
                                       onNavigate(UiEvent.Navigate(
                                            Route.AddNoteScreen
-                                                   + "/${note.id}"
-                                                   + "/${note.color}"
+                                                   + "?noteId=${note.id}&noteColor=${note.color}"
                                        ))
                             },
                         onDeleteClick = {
@@ -163,7 +162,7 @@ fun NoteScreen(
                         }
                     )
 
-                    Spacer(modifier = Modifier.height(16.dp))
+                    Spacer(modifier = Modifier.height(8.dp))
 
                 }
             }

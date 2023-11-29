@@ -78,13 +78,13 @@ fun NoteItem(
 
             Text(
                 text = note.title,
-                style = MaterialTheme.typography.titleSmall,
+                style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.onSurface,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
 
-            Spacer(modifier = modifier.height(8.dp))
+            Spacer(modifier = modifier.height(16.dp))
 
             Text(
                 text = note.description,
@@ -98,7 +98,8 @@ fun NoteItem(
 
         IconButton(
             onClick = onDeleteClick,
-            modifier = modifier.align(Alignment.BottomEnd)
+            modifier = modifier
+                .align(Alignment.BottomEnd)
         ) {
             Icon(
                 imageVector = Icons.Default.Delete,
